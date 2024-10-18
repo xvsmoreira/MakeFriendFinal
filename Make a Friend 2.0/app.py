@@ -98,15 +98,15 @@ def filtro():
     else:
         pets_filtrados = pets
     
-    # Create a dictionary to store cities and their corresponding pets
+
     cidades_dict = {}
     for pet in pets:
         if pet.cidade not in cidades_dict:
             cidades_dict[pet.cidade] = []
         cidades_dict[pet.cidade].append(pet)
     
-    # Get the list of cities
+    
     cidades = list(cidades_dict.keys())
-    cidades.sort()  # ordenar alfabeticamente
+    cidades.sort()  
     
     return render_template('filtro.html', pets=pets_filtrados, cidades=cidades)
